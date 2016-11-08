@@ -14,7 +14,7 @@ Pizza.prototype.isLarge = function () {
   }
 }
 
- // This function works in the front end but not in the back end.
+
 Pizza.prototype.addToppings = function () {
   this.toppings.forEach(function(topping){
     this.price += 1;
@@ -23,6 +23,7 @@ Pizza.prototype.addToppings = function () {
 
 
 //user logic
+
 $(document).ready(function(){
   var pizza1 = new Pizza();
 
@@ -33,7 +34,7 @@ $(document).ready(function(){
     $("input:checkbox[name=size]:checked").each(function(){
       pizza1.size = $(this).val();
     });
-    
+
     pizza1.isLarge();
 
     $("input:checkbox[name=topping]:checked").each(function(){
@@ -47,6 +48,7 @@ $(document).ready(function(){
     $('#your-name').prepend(pizza1.name);
     $('#order').prepend(pizza1.size + " pizza <br>")
     $('#price').append("$" + pizza1.price);
+
 
   });
 });
